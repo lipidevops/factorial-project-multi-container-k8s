@@ -19,7 +19,7 @@ before_install:
     - gcloud config set compute/zone us-central1-c # Find this information on your Kubernetes cluster page on GCP
     - gcloud container clusters get-credentials factorial-app # Name of your Kubernetes cluster
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin # Login to docker hub
-    - docker build -t lipidocker1/factorial-project-react-client-k8s -f ./react-client/Dockerfile.dev ./react-client # Build the image to run unit test cases
+    - docker build -t lipidocker1/factorial-project-react-client-k8s:v1 -f ./react-client/Dockerfile.dev ./react-client # Build the image to run unit test cases
 
 # Tell Travis how to run test suite 
 script:
