@@ -17,7 +17,7 @@ before_install:
     - gcloud auth activate-service-account --key-file devops-course-2020-new-536013026f82.json # Authenticate to Google cloud. Similar to AWS IAM user we will use service account in GCP. With authentication google-sdk can use our GCP account
     - gcloud config set project factorial-app # Your Project ID on GCP
     - gcloud config set compute/zone us-central1-c # Find this information on your Kubernetes cluster page on GCP
-    - gcloud container clusters get-credentials factorial-project-cluster # Name of your Kubernetes cluster
+    - gcloud container clusters get-credentials factorial-app # Name of your Kubernetes cluster
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin # Login to docker hub
     - docker build -t lipidocker1/factorial-project-react-client-k8s -f ./react-client/Dockerfile.dev ./react-client # Build the image to run unit test cases
 
