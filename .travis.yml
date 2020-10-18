@@ -15,7 +15,7 @@ before_install:
     - gcloud components update kubectl # Install/Update kubectl
     - openssl aes-256-cbc -K $encrypted_22e0ef6a1544_key -iv $encrypted_22e0ef6a1544_iv -in devops-course-2020-new-536013026f82.json.enc -out devops-course-2020-new-536013026f82.json -d
     - gcloud auth activate-service-account --key-file devops-course-2020-new-536013026f82.json # Authenticate to Google cloud. Similar to AWS IAM user we will use service account in GCP. With authentication google-sdk can use our GCP account
-    - gcloud config set project factorial-app # Your Project ID on GCP
+    - gcloud config set project devops-course-2020-new # Your Project ID on GCP
     - gcloud config set compute/zone us-central1-c # Find this information on your Kubernetes cluster page on GCP
     - gcloud container clusters get-credentials factorial-app # Name of your Kubernetes cluster
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin # Login to docker hub
